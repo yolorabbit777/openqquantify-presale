@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 57.65 126.64">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #aedf1a;
+        stroke-miterlimit: 10;
+        stroke-width: 4px;
+      }
+
+      .cls-2 {
+        filter: url(#outer-glow-1);
+      }
+    </style>
+    <filter id="outer-glow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="5"/>
+      <feFlood flood-color="#aedf1a" flood-opacity=".75"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-2">
+      <path class="cls-1" d="m25.02,22.02h9.15l20.73,87.29h-9.83l-5.11-22.25h-21.11l-5.03,22.25H4.29L25.02,22.02Zm12.42,52.69l-8.08-35.94-8,35.94h16.08Z"/>
+      <polygon class="cls-1" points="36.24 2 21.42 2 21.42 8.71 2 8.71 2 17.37 55.65 17.37 55.65 8.71 36.24 8.71 36.24 2"/>
+      <rect class="cls-1" x="2" y="114.53" width="53.65" height="10.11"/>
+    </g>
+  </g>
+</svg>

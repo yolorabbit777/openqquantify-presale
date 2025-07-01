@@ -1,0 +1,203 @@
+.transactions-container {
+    margin: 5px;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: default;
+    grid-template-areas: 'card1 card2';
+    grid-gap: 5px;
+  
+    @media only screen and (min-width: 750px) {
+      width: 100%;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      margin-top: 10px;
+    }
+  
+    @media (max-width: 576px) {
+      margin: 5px 0;
+    }
+
+    .card-container {
+        flex-direction: column;
+        padding: 30px;
+        background: rgba(0, 0, 0, .1);
+        border-radius: 15px;
+        display: flex;
+        position: relative;
+        align-items: flex-start;
+
+        .card-title-wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 10px;
+        
+            & .card-title {
+                margin: 0 40px 0 0;
+                white-space: nowrap;
+            }
+    
+            & .transaction-count {
+                font-size: 2.2rem;
+                font-weight: 100;
+                line-height: 100%;
+                letter-spacing: -.03em;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        
+            @media (max-width: 1024px) {
+                flex-direction: column;
+                align-items: flex-start;
+        
+                & .card-title {
+                    margin: 0 0 20px 0;
+                }
+            }
+        }
+
+        & .transaction-grid-container {
+            width: 100%;
+
+            .grid {
+                display: grid;
+                grid-template-columns: 1fr 2fr 2fr 2fr;
+                font-size: .8rem;
+                width: 100%;
+            
+                @media only screen and (max-width: 768px),
+                (min-device-width: 768px) and (max-device-width: 1024px) {
+                    grid-template-columns: 1fr;
+                }
+            }
+
+            .header-cell {
+                padding: 12px;
+                border-bottom: 2px solid rgba(0, 0, 0, .2);
+                background: rgba(0, 0, 0, .1);
+                text-align: center;
+                font-size: .8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+            
+                & strong {
+                    font-weight: 600;
+                    margin: 0 3px 0 0;
+                }
+            
+                &:hover {
+                    cursor: pointer;
+                    border-top: 2px solid #2a6dff;
+                }
+            
+                @media only screen and (max-width: 768px),
+                (min-device-width: 768px) and (max-device-width: 1024px) {
+                    position: absolute;
+                    top: -9999px;
+                    left: -9999px;
+                    flex-direction: row;
+                    display: flex;
+                    padding: 0 8px;
+                    align-items: center;
+                    justify-content: flex-start;
+                    text-align: left;
+                }
+            
+                @media (max-width: 576px) {
+                    font-size: .8rem;
+                }
+            
+                @media (max-width: 480px) {
+                    &:before {
+                        min-width: 100px;
+                    }
+                    padding: 0 0 0 8px;
+                }
+            }
+
+            .cell {
+                padding: 12px;
+                border-bottom: 2px solid rgba(0, 0, 0, .2);
+                font-size: .9rem;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            
+                @media only screen and (max-width: 768px),
+                (min-device-width: 768px) and (max-device-width: 1024px) {
+                    flex-direction: row;
+                    display: flex;
+                    padding: 0 8px;
+                    align-items: center;
+                    justify-content: flex-start;
+                    text-align: left;
+            
+                    &:before {
+                        white-space: nowrap;
+                        border-right: 1px solid rgba(255, 255, 255, .1);
+                        padding: 8px;
+                        background: rgba(255, 255, 255, .05);
+                        left: -8px;
+                        position: relative;
+                        min-width: 120px;
+                        text-align: left;
+                    }
+                }
+            
+                @media (max-width: 576px) {
+                    font-size: .8rem;
+                }
+            
+                @media (max-width: 480px) {
+                    &:before {
+                        min-width: 100px;
+                    }
+                    padding: 0 0 0 8px;
+                }
+
+                &.user {
+                    background: rgba(0, 0, 0, 0.3);
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    
+                    @media only screen and (max-width: 768px), (min-device-width: 768px) and (max-device-width: 1024px) {
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                    }
+                }
+
+                &.alti {
+                    @media only screen and (max-width: 768px), (min-device-width: 768px) and (max-device-width: 1024px) {
+                        &:before {
+                          content: 'ALTI Amount';
+                        }
+                    }
+                }
+
+                &.usdt {
+                    @media only screen and (max-width: 768px), (min-device-width: 768px) and (max-device-width: 1024px) {
+                        &:before {
+                          content: 'USDT Amount';
+                        }
+                    }
+                }
+
+                &.date {
+                    @media only screen and (max-width: 768px), (min-device-width: 768px) and (max-device-width: 1024px) {
+                        &:before {
+                          content: 'Purchase Date';
+                        }
+                    }
+                }
+            }
+
+
+        }
+    }
+}

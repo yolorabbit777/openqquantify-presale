@@ -1,0 +1,214 @@
+.myportfolio-container {
+    width: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
+
+    .card-title-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        & .card-title {
+            margin: 0 40px 0 0;
+            white-space: nowrap;
+        }
+
+        & .my-deposit {
+            font-size: 2.2rem;
+            font-weight: 100;
+            line-height: 100%;
+            letter-spacing: -0.03em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @media (max-width: 576px) {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            align-items: flex-start;
+
+            & .card-title {
+                margin: 0 0 20px 0;
+            }
+        }
+    }
+
+    .card-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        min-height: 200px;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
+
+        .card-content-wrapper {
+            padding: 30px 0 0 0;
+            width: 100%;
+            min-width: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            @media (max-width: 576px) {
+                padding: 10px 0 0 0;
+            }
+
+            .chart-data {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                width: 100%;
+                height: 100%;
+
+                @media (max-width: 1400px) {
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .items-data {
+                    width: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    & .name {
+                        font-size: 1rem;
+                        font-weight: 300;
+                        min-width: 80px;
+                    }
+
+                    & .value {
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                    }
+
+                    @media (max-width: 1400px) {
+                        width: 100%;
+                        min-width: 180px;
+                    }
+
+                    .item-usdt {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                        align-items: center;
+                        margin: 0 0 20px 0;
+
+                        & .value {
+                            color: #14f195;
+                        }
+                    }
+
+                    .item-q {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                        align-items: center;
+                        margin: 0 0 20px 0;
+
+                        & .value {
+                            color: #ae7dff;
+                        }
+                    }
+
+                    .item-available-q {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        width: 100%;
+                        align-items: center;
+                        margin: 0 0 10px 0;
+
+                        & .value {
+                            color: #dfdf0f;
+                        }
+                    }
+                }
+
+                .chart-wrapper {
+                    left: 0px;
+                    position: relative;
+                    width: 60%;
+
+                    @media (max-width: 1400px) {
+                        width: 80%;
+                        min-width: 180px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+
+            .buttons-row {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: flex-end;
+
+                @media (min-width: 1400px) {
+                    &.mobile {
+                        display: none;
+                    }
+                }
+
+                @media (max-width: 1400px) {
+                    &.desktop {
+                        display: none;
+                    }
+                    margin-top: 10px;
+                }
+
+                .notification {
+                    border-radius: 10px;
+                    padding: 14px 14px;
+                    font-size: 1.2rem;
+                    color: rgba(255, 255, 255, 0.6);
+                    font-weight: 400;
+                    min-height: 30px;
+                    width: 100%;
+                    text-align: center;
+                    -webkit-justify-content: center;
+                    justify-content: center;
+                    margin-left: 2.5px;
+                    border: 1px solid #7a4800;
+                    background: #212026;
+
+                    b {
+                        color: rgba(255, 255, 255, 1);
+                        font-size: 1.6rem;
+                    }
+                }
+                .btn {
+                    background: #1d4baf;
+                    padding: 0px 15px;
+                    border-radius: 10px;
+                    margin: 0 0 0 10px;
+                    color: #fff;
+                    border-radius: 0.85em;
+                    font-weight: 600;
+                    white-space: nowrap;
+                    font-size: 0.9rem;
+                    height: 36px;
+                    @media (max-width: 768px) {
+                        margin: 8px 0 0 0;
+                    }
+                    &:hover {
+                        background: rgba(25, 30, 39, 0.6);
+                    }
+                }
+            }
+        }
+    }
+}

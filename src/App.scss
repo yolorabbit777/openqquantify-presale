@@ -1,0 +1,110 @@
+.app-container {
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 60px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 30px;
+    height: 100%;
+    transition: width 300ms ease-in-out;
+    display: flex;
+    flex-direction: column;
+
+    &::before {
+      background: rgba(45, 51, 65, 0.6);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      z-index: -1;
+      opacity: 1;
+    }
+    &::after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      background: url('./assets/image/background.jpg') center center / cover no-repeat;
+      z-index: -2;
+      @-moz-document url-prefix() {
+        background: url('./assets/image/background.jpg');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: auto 250%;
+      }
+    }
+  
+    @media (max-width: 1024px) {
+        height: 100%;
+        padding: 60px;
+    }
+  
+    @media (max-width: 576px) {
+      padding: 30px;
+    }
+  
+    @media (max-width: 480px) {
+      padding: 20px;
+    }
+
+    .title {
+        font-size: 2rem;
+        font-weight: 200;
+        letter-spacing: -.03em;
+        line-height: 100%;
+        padding: 0 0 5px 0;
+      
+        @media (max-width: 480px) {
+          font-size: 1.7rem;
+        }
+    }
+
+    .description {
+        font-size: .9rem;
+        font-weight: 300;
+        text-transform: none;
+        letter-spacing: 0;
+        & strong {
+          font-weight: 600;
+        }
+      
+        @media (max-width: 480px) {
+          font-size: .8rem;
+        }
+    }
+
+    .content {
+        width: calc(100% + 10px);
+        margin: 20px 0 0 0;
+      
+        @media (max-width: 480px) {
+          margin: 10px 0 0 0;
+          width: 100%;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 1fr 50px;
+            grid-template-areas: 'main';
+            height: 100vh;
+          
+            @media only screen and (min-width: 750px) {
+                display: grid;
+                grid-template-columns: 0 1fr;
+                grid-template-rows: 0 1fr 50px;
+                grid-template-areas: 'aside main';
+                left: -5px;
+                position: relative;
+            }
+
+            main {
+                grid-area: main;
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.battery {
+    width: 100px;
+    height: 300px;
+    border: 3px solid rgba(42, 109, 255, 1);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: rgba(20, 241, 149, 0); /* Color indicating the battery is empty */
+
+    @media (max-width: 1400px) {
+        width: 80px;
+        height: 200px;
+    }
+
+    .altilium {
+        width: 80%;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        background: rgba(42, 109, 255, 1);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        background: rgba(42, 109, 255, 1);
+    }
+}

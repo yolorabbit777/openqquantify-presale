@@ -1,0 +1,148 @@
+.statistics-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .statistics-slider {
+        display: none;
+
+        .overview-card {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            left: 0;
+            margin: 0px;
+            border-radius: 15px;
+
+            &.slide-in {
+                animation: slideIn 1s ease-out forwards;
+            }
+
+            &.slide-out {
+                animation: slideOut 1s ease-out forwards;
+            }
+
+            &.slide-out {
+                left: -10px;
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    }
+
+    .statistics-grid {
+        display: none;
+    }
+
+    // Mobile-specific styles
+    @media (max-width: 576px) {
+        .statistics-slider {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            border-radius: 15px;
+            width: 100%;
+            height: 120px; // Adjust based on content
+            margin-bottom: 5px;
+        }
+    }
+
+    // Desktop and larger devices
+    @media (min-width: 577px) {
+        .statistics-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            border-radius: 15px;
+            width: 100%;
+        }
+    }
+
+    .overview-card {
+        flex-basis: 250px;
+        flex-grow: 1;
+        margin: 5px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 30px;
+        min-height: 120px;
+        background: rgba(255, 255, 255, .1);
+        border-radius: 15px;
+        position: relative;
+        box-sizing: padding-box;
+    
+        &:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(42, 109, 255, .2);
+            filter: blur(30px);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        &.green::after {
+            background: rgba(20, 241, 149, .2);
+        }
+    
+        @media (max-width: 576px) {
+            margin: 5px 0;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin: 0 0 3px 0;
+            line-height: 100%;
+        
+            & .contract-name {
+                color: #14F195;
+                white-space: nowrap;
+            }
+        }
+
+        .card-value {
+            font-size: 1.7rem;
+            font-weight: 100;
+            line-height: 100%;
+            letter-spacing: -.03em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        
+            .currency_type {
+                letter-spacing: 0;
+                margin: 0 0 0 10px;
+                font-size: .9rem;
+                opacity: .5;
+                padding: 0;
+                line-height: 200%;
+            }
+        }
+    }
+}
