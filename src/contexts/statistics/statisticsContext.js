@@ -82,9 +82,7 @@ export const StatisticsProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        const intervalId = setInterval(fetchStatisticsData, 2000);
-
-        return () => clearInterval(intervalId);
+        fetchStatisticsData()
     }, [fetchStatisticsData]);
 
     useEffect(() => {
